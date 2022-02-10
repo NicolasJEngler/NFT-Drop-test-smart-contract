@@ -84,9 +84,7 @@ describe('NFTDrop', function () {
       await NFTDrop.reserveNFTs(users[0].address, 25);
 
       for (let i = 0; i < 10; i++)
-        await expect(
-          users[i].NFTDrop.mint(emptyBytes32Array, dummyBytes32)
-        )
+        await expect(users[i].NFTDrop.mint(emptyBytes32Array, dummyBytes32))
           .to.emit(NFTDrop, 'Transfer')
           .withArgs(
             '0x0000000000000000000000000000000000000000',
@@ -96,5 +94,11 @@ describe('NFTDrop', function () {
 
       await expect(await NFTDrop.totalSupply()).to.be.equal('60');
     }
+  });
+
+  it('should read saleStarted value', async function () {
+    const {NFTDrop} = await setup();
+
+    await expect(await NFTDrop.saleStarted()).to.be.equal(true || false);
   });
 });

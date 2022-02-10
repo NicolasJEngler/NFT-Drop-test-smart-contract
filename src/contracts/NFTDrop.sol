@@ -23,7 +23,7 @@ contract NFTDrop is ERC721Enumerable, Ownable {
 
     string private baseURI;
 
-    bool private saleStarted = true;
+    bool public saleStarted = true;
     uint256 public constant maxMint = 2222;
 
     function _baseURI() internal view virtual override returns (string memory) {
