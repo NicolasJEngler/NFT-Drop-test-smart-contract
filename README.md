@@ -76,6 +76,13 @@ This will deploy the contract on the specified network.
 Behind the scene it uses `hardhat deploy` command so you can append any argument for it
 <br/><br/>
 
+`yarn verify <network> <contractAddress>`
+
+This will verify the contract on Etherscan for the specified network.
+
+Behind the scene it uses `hardhat verify` command so you can append any argument for it
+<br/><br/>
+
 `yarn export <network> <file.json>`
 
 This will export the abi+address of deployed contract to `<file.json>`
