@@ -81,7 +81,9 @@ async function performAction(rawArgs) {
   } else if (firstArg === 'verify') {
     const {fixedArgs, extra} = parseArgs(args, 2, {});
     await execute(
-      `hardhat verify --network ${fixedArgs[0]} ${fixedArgs[1]} ${extra.join(' ')}`
+      `hardhat verify --network ${fixedArgs[0]} ${fixedArgs[1]} ${extra.join(
+        ' '
+      )}`
     );
   } else if (firstArg === 'export') {
     const {fixedArgs} = parseArgs(args, 2, {});
